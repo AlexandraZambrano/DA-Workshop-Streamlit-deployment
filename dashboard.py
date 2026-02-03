@@ -3,8 +3,19 @@ import pandas as pd
 import numpy as np
 from sklearn.datasets import fetch_california_housing
 
+
 # Configuración de página
 st.set_page_config(page_title="Dashboard California Housing", layout="wide", page_icon="🏠")
+
+# CSS para ocultar el botón de Deploy y el menú superior
+hide_deploy_button = """
+    <style>
+    .stAppDeployButton {visibility: hidden;}
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    </style>
+"""
+st.markdown(hide_deploy_button, unsafe_allow_html=True)
 
 # Título
 st.title("🏠 Dashboard: Precios de Viviendas en California")
